@@ -1,101 +1,89 @@
-import Image from "next/image";
+import { Search, ArrowRight, MessageCircle } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
-export default function Juniors() {
+export default function Component() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-          Juniors          </li>
-        </ol>
+    <div className="min-h-screen bg-gray-50">
+      {/* Navigation Header */}
+      <header className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <h1 className="text-xl font-semibold text-gray-900">ctrl.z</h1>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {/* Search Bar */}
+            <div className="flex-1 max-w-md mx-8">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <Input type="text" placeholder="Search" className="pl-10 bg-gray-50 border-gray-200 focus:bg-white" />
+              </div>
+            </div>
+
+            {/* Navigation Links */}
+            <nav className="flex items-center space-x-8">
+              <a href="#" className="text-sm text-gray-600 hover:text-gray-900">
+                Discover
+              </a>
+              <a href="#" className="text-sm text-gray-600 hover:text-gray-900">
+                Project Gallery
+              </a>
+              <a href="#" className="text-sm text-gray-600 hover:text-gray-900">
+                Community
+              </a>
+              <a href="#" className="text-sm text-gray-600 hover:text-gray-900">
+                CTRL+View
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* My Projects Header */}
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-semibold text-gray-900">My Projects</h2>
+          <Button variant="ghost" className="text-gray-500 hover:text-gray-700">
+            View All
+            <ArrowRight className="ml-1 w-4 h-4" />
+          </Button>
+        </div>
+
+        {/* Empty State */}
+        <div className="flex flex-col items-center justify-center py-32">
+          <div className="text-center max-w-md">
+            <p className="text-gray-500 text-lg mb-2">Looks like your project space is a little quiet.</p>
+            <p className="text-gray-400 mb-8">Find something exciting to work on</p>
+            <Button className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2">
+              Explore Projects
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="./juniors/1/detail/"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to project detail
-        </a>
-      </footer>
+
+      {/* Bottom Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="border-t border-gray-200 pt-8">
+          <div className="flex space-x-8">
+            <button className="text-lg font-medium text-gray-900 border-b-2 border-gray-900 pb-2">
+              Projects for You
+            </button>
+            <button className="text-lg font-medium text-gray-400 hover:text-gray-600 pb-2">Community Spotlight</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Chat Button */}
+      <div className="fixed bottom-6 right-6">
+        <Button size="sm" variant="outline" className="bg-white shadow-lg border-gray-200 hover:bg-gray-50">
+          <MessageCircle className="w-4 h-4 mr-2" />
+          Chat
+        </Button>
+      </div>
     </div>
-  );
+  )
 }
